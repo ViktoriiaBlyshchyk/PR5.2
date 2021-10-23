@@ -32,7 +32,7 @@ int main()
 		s = S(x, eps, n, s);
 		cout << "|" << setw(7) << setprecision(2) << x << " |"
 			<< setw(15) << setprecision(2) << log((x + 1 * 1.) / (x - 1)) << " |"
-			<< setw(10) << setprecision(2) << s << " |"
+			<< setw(10) << setprecision(2) << s * 2 << " |"
 			<< setw(10) << n << " |"
 			<< endl;
 		x += dx;
@@ -43,7 +43,7 @@ int main()
 double S(const double x, const double eps, int& n, double s)
 {
 	n = 0; 
-	double a = 2 * (1. / x);
+	double a = 1. / x;
 	s = a;
 	do {
 		n++;
@@ -54,7 +54,7 @@ double S(const double x, const double eps, int& n, double s)
 }
 double A(const double x, const int n, double a)
 {
-	double R = 2 * ((2 * n - 1 * 1.) / ((x * x) * (2 * n + 1)));
+	double R = (2 * n - 1 * 1.) / ((x * x) * (2 * n + 1));
 	a *= R;
 	return a;
 }
